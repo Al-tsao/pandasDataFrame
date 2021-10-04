@@ -20,5 +20,5 @@ pd_gp_ca2 = pd_gp_cal.groupby(['A','B']).agg(agg_d).rename(columns=d).reset_inde
 print(pd_gp_ca2)
 
 # sns.set()
-# heatmap = sns.scatterplot(data=pd_gp_cal2, x="A", y="B")
+heatmap = sns.scatterplot(data=pd_gp_ca2, x="A", y="B")
 # plt.show()
