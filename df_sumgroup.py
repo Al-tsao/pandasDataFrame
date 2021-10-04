@@ -5,11 +5,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #分組計算
-pd_gp_cal = pd.DataFrame({'A' : ['X', 'X', 'Y', 'Y',
-                      'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z'],
-                   'B' : ['one', 'one', 'two', 'two',
-                          'two', 'two', 'three', 'three', 'three', 'three', 'three', 'three'],
-                   'C' : [1,2]*6})
+pd_gp_cal = df = pd.DataFrame({'A' : ['X','X','Y','Y','Y','Y','Z','Z','Z','Z','Z','Z'],
+                               'B' : ['one','one','two','two','two','two','three','three','three','three','three','three'],
+                               'C' : [1,2]*6})
 
 #計算次數與總和
 countList = [1]*pd_gp_cal.shape[0]
@@ -19,6 +17,6 @@ d = {'C':'Sum', 'Count':'Count'}
 pd_gp_ca2 = pd_gp_cal.groupby(['A','B']).agg(agg_d).rename(columns=d).reset_index() #計算兩群組總和
 print(pd_gp_ca2)
 
-# sns.set()
+sns.set()
 heatmap = sns.scatterplot(data=pd_gp_ca2, x="A", y="B")
-# plt.show()
+plt.show()
