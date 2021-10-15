@@ -1,3 +1,4 @@
+from numpy import AxisError
 import pandas as pd
 
 data = pd.DataFrame({"power_level": [12000, 16000, 4000, 1500, 3000, 
@@ -16,4 +17,4 @@ def my_function(x, h, l):
         return("med")
     return ("low")
     
-data["power_level"].apply(my_function, args = [10000, 2000])
+data["power_level"].apply(my_function, args = [10000, 2000]) #args就是放入x之後的參數，x會自動帶入每一個cell
