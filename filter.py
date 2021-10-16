@@ -20,5 +20,5 @@ mask_isin = df['Day'].isin(['9/4', '9/11'])
 #使用between
 mask_bet = df['Revenue'].between(160, 200)
 
-#使用dublicated
+#使用duplicated
 mask_dupl = df['Cost'].duplicated()
