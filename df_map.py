@@ -19,7 +19,7 @@ data=pd.DataFrame({
 #替換男、女變成1、0
 #使用字典进行映射
 data["gender"] = data["gender"].map({"男":1, "女":0})
-​
+
 #使用函数
 def gender_map(x):
     gender = 1 if x == "男" else 0
