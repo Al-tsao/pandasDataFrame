@@ -25,4 +25,7 @@ mask_startswith = print(chicago['Position Title'].str.lower().str.startswith('wa
 mask_endswith = print(chicago['Position Title'].str.lower().str.endswith('water')) #先將字體通通轉換成小寫統一格式，然後尋找結尾是否還有water
 
 #strip(), lstrip(), rstrip()
-chicago["Name"].str.strip() #移除前後空格
+chicago['Name'].str.strip() #移除前後空格
+
+#split()
+chicago['Name'].str.split(',').str.get(0).str.title() #將字串用split中的符號拆解成陣列，然後用get取陣列中的哪一個文字
