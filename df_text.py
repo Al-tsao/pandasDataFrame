@@ -29,3 +29,4 @@ chicago['Name'].str.strip() #移除前後空格
 
 #split()
 chicago['Name'].str.split(',').str.get(0).str.title() #將字串用split中的符號拆解成陣列，然後用get取陣列中的哪一個文字
+chicago['Name'].str.split(',', expand=True, n=1) #將切分完的字串直接擴充，然後看要擴充成幾欄
