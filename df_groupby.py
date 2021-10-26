@@ -31,3 +31,19 @@ print('============================================')
 #multiple functions
 multiFunc = df.groupby(['A'])['C'].agg(['mean','sum']) #以A作為分組標準，對C進行平均與加總
 print('multiFunc', multiFunc.reset_index(), sep='\n')
+
+#size()
+sectors = df.groupby('A')
+sectors.size() #其實跟value_counts()的功能一項，是了解一個series中各分類的總數是多少
+
+#get_group()
+print(sectors.get_group('Z')) #只會抽取Sector中特定的Z組，將資料傳出來
+
+
+#agg()
+countList = [1]*df.shape[0]
+df['Count'] = countList #新增Count欄位來計算次數
+agg_d = {'C':'sum','Count':'size'} #定義column欄位要做甚麼統計運算
+d = {'C':'Sum', 'Count':'Count'}
+pd_gp_ca2 = df.groupby(['A','B']).agg(agg_d).rename(columns=d).reset_index() #計算兩群組總和
+print(pd_gp_ca2)
