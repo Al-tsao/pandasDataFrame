@@ -1,6 +1,5 @@
 #載入模組
 import pandas as pd
-import datetime as dt
 
 from pandas.core.indexes.period import period_range
 
@@ -24,7 +23,5 @@ dataRangePeridStartD = pd.date_range(start = '2012/09/4', periods = 8, freq = '1
 #利用指定數量建立時間序列-從尾往前推
 dataRangePeridEndD = pd.date_range(end = '2012/09/11', periods = 8, freq = '1D') # period: 要取多少的數量
 
-
-
-
-print(dates['timeFormant'])
+#dt使用
+#dt和str一樣，使用這個方法後可以用dt中的attributes和methods
