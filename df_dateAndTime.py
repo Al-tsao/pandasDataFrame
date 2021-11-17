@@ -10,7 +10,7 @@ dates['timeFormant']  = pd.to_datetime(dates['time'], errors = 'coerce', format 
 #format: pandas可以自己判定時間格式，但是有些時間格式太詭異這時候可以用format告訴pandas格式是如何
 
 #pd.data_range: 建立一段時間序列
-#利用區間建立時間序列
+#利用區間建立時間序列，序列的格式是DataFrame，如果要使用dt方法要先轉成Series
 dataRangeD = pd.date_range(start = '2021/01/01', end = '2021/12/31', freq = '1D') #freq = '1D': 間格是以1天為單位
 dataRangeB = pd.date_range(start = '2021/01/01', end = '2021/12/31', freq = 'B') #freq = 'B': 只取禮拜一到禮拜五
 dataRangeW = pd.date_range(start = '2021/01/01', end = '2021/12/31', freq = 'W-MON') #freq = 'W-MON': 只取禮拜一
@@ -25,3 +25,10 @@ dataRangePeridEndD = pd.date_range(end = '2012/09/11', periods = 8, freq = '1D')
 
 #dt使用
 #dt和str一樣，使用這個方法後可以用dt中的attributes和methods
+dataRangeD = pd.DataFrame(dataRangeD, columns = ['Time'])
+dataRangeD['Time'].dt.day
+dataRangeD['Time'].dt.isocalendar().week #看是第幾周
+dataRangeD['Time'].dt.month
+dataRangeD['Time'].dt.day_name()
+dataRangeD['Time'].dt.month_name()
+
