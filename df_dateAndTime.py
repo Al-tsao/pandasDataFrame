@@ -2,6 +2,7 @@
 import pandas as pd
 
 from pandas.core.indexes.period import period_range
+from pandas.tseries.offsets import Minute
 
 #pd.to_datetime: 把資料轉換成pandas的時間格式
 dates = pd.DataFrame({'time': ['2021/01/01', '2021/12/31', 'Atome']})
@@ -32,3 +33,21 @@ dataRangeD['Time'].dt.month
 dataRangeD['Time'].dt.day_name()
 dataRangeD['Time'].dt.month_name()
 
+#時間加減-固定
+dataRange = pd.date_range(start = '2021/01/01', end = '2021/12/31', freq = '1D') #freq = '1D': 間格是以1天為單位
+dataRange = pd.DataFrame(dataRange, columns = ['Time'])
+dataRange['Time'] = dataRange['Time'] + pd.DateOffset(days = 5)
+dataRange['Time'] = dataRange['Time'] + pd.DateOffset(weeks = 5)
+dataRange['Time'] = dataRange['Time'] + pd.DateOffset(weeks = 5)
+dataRange['Time'] = dataRange['Time'] + pd.DateOffset(years = 5)
+dataRange['Time'] = dataRange['Time'] + pd.DateOffset(years = 1, months = 2, days = 3, minutes = 4, seconds = 5)
+
+#時間加減-變動
+dataRange = pd.date_range(start = '2021/10/31', end = '2021/11/30', freq = '1D') #freq = '1D': 間格是以1天為單位
+dataRange = pd.DataFrame(dataRange, columns = ['Time'])
+dataRange['Time'] = dataRange['Time'] + pd.tseries.offsets.MonthEnd(0)
+
+
+
+
+print(dataRange)
