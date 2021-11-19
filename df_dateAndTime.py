@@ -47,7 +47,6 @@ dataRange = pd.date_range(start = '2021/10/31', end = '2021/11/30', freq = '1D')
 dataRange = pd.DataFrame(dataRange, columns = ['Time'])
 dataRange['Time'] = dataRange['Time'] + pd.tseries.offsets.MonthEnd(0)
 
-
-
-
-print(dataRange)
+#時間點對點加減
+time_a = pd.Timestamp('2021/09/04')
+time_b = pd.Timestamp('2021/09/11')
