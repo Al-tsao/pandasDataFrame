@@ -20,4 +20,8 @@ merged = week1.merge(week2, how = 'inner', on = ['Customer ID', 'Food ID']) #on 
 merged = week1.merge(week2, how = 'outer', on = 'Customer ID', suffixes = ['-Week 1', '-Week 2'], indicator = True)
 #indicator = True: 最後新增一個colmn來顯示交集的資料是從那個table來
 
-print(merged)
+#merge-outer join: 取差集
+merged = week1.merge(week2, how = 'outer', on = 'Customer ID', suffixes = ['-Week 1', '-Week 2'], indicator = True)
+mask = merged['_merge'].isin(['left_only', 'right_only'])
+
+print(merged[mask])
