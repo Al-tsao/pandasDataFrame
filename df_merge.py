@@ -23,5 +23,8 @@ merged = week1.merge(week2, how = 'outer', on = 'Customer ID', suffixes = ['-Wee
 #merge-outer join: 取差集
 merged = week1.merge(week2, how = 'outer', on = 'Customer ID', suffixes = ['-Week 1', '-Week 2'], indicator = True)
 mask = merged['_merge'].isin(['left_only', 'right_only'])
+merged[mask]
 
-print(merged[mask])
+#merge-left join: 以左邊的table中的某些欄位為基礎，撈取右邊報表相對對映的資料
+merged = week1.merge(foods, how = 'left', on = 'Food ID')
+print(merged)
