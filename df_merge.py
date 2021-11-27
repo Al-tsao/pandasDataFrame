@@ -27,4 +27,7 @@ merged[mask]
 
 #merge-left join: 以左邊的table中的某些欄位為基礎，撈取右邊報表相對對映的資料
 merged = week1.merge(foods, how = 'left', on = 'Food ID')
+#如我兩個table中的pivot column名稱不一樣時
+merged = week2.merge(customers, how = 'left', left_on = 'Customer ID', right_on = 'ID').drop('ID', axis = 'columns')
+
 print(merged)
