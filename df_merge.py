@@ -29,5 +29,9 @@ merged[mask]
 merged = week1.merge(foods, how = 'left', on = 'Food ID')
 #如我兩個table中的pivot column名稱不一樣時
 merged = week2.merge(customers, how = 'left', left_on = 'Customer ID', right_on = 'ID').drop('ID', axis = 'columns')
+#使用index與column做merge
+customersIndex = pd.read_csv('Restaurant - Customers.csv', index_col = 'ID')
+foodsIndex = pd.read_csv('Restaurant - Foods.csv', index_col = 'Food ID')
+merged = week1.merge(customers, how = 'left', left_on = 'Customer ID', right_index = True)
 
 print(merged)
