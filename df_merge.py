@@ -13,6 +13,10 @@ sales = pd.concat(objs = [week1, week2], ignore_index = True) #ignore_index = Tr
 sales = pd.concat(objs = [week1, week2], keys = ['Week 1', 'Week 2']) #keys: 建立雙重index
 sales.loc[('Week 1', 240), ['Customer ID', 'Food ID']] #使用loc來找到雙重index的目標
 
+#merge: 使用pd.merge
+merged = pd.merge(week1, customers, how = 'left', left_on = 'Customer ID', right_on = 'ID')
+print(merged)
+
 #merge-inner join: 取聯集，如果ID有重複，那新的join也會重複
 merged = week1.merge(week2, how = 'inner', on = 'Customer ID', suffixes = ['-Week 1', '-Week 2']) #how = inner: 用交集取
 merged = week1.merge(week2, how = 'inner', on = ['Customer ID', 'Food ID']) #on = []: 使用多個columns取交集
@@ -39,4 +43,3 @@ merged = week1.merge(customers, how = 'left', left_on = 'Customer ID', right_ind
 merged = week1.join(satisfaction)
 
 
-print(merged)
