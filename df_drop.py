@@ -3,7 +3,7 @@ import pandas as pd
 
 #載入數據
 df = pd.DataFrame([['Jhon',15,'A'],['Anna',19,'B'],['Paul',25,'D']])
-df. columns = ['Name','Age','Grade']
+df.columns = ['Name','Age','Grade']
 
 print(df)
 
