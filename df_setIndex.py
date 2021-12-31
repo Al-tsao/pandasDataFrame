@@ -7,5 +7,5 @@ bond = pd.read_csv("jamesbond.csv")
 #設定index
 bond.set_index(keys='Film', inplace=True)
 
-#回覆index
+#回復index
 bond.reset_index()
