@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 RawData = { 
     "Day":['9/4', '9/5', '9/6', '9/7', '9/8', '9/9', '9/10', '9/11'],
@@ -7,3 +8,6 @@ RawData = {
 }
 df = pd.DataFrame(RawData)
 print(df)
+
+data = pd.DataFrame(np.arange(16).reshape(4,4), index = list('abcd'), columns = list('ABCD'))
+print(data)
