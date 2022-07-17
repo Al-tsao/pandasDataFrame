@@ -16,3 +16,5 @@ df = pd.DataFrame({
 })
 #2.1 Sort by column
 df = df.sort_values(by=['col1'])
+
+#2.2 Sort by multiple columns: 重新排列-多欄位(排序順序先寫的重要性高)
