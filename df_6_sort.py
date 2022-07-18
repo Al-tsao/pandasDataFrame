@@ -22,3 +22,6 @@ df = df.sort_values(by=['col1', 'col2'], ascending = [False, True])
 
 #2.3 Sort Descending
 df.sort_values(by='col1', ascending=False)
+
+#2.4 Sort Descending: 有NaN的放在前面
+df.sort_values(by='col1', ascending=False, na_position='first')
