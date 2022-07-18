@@ -18,3 +18,7 @@ df = pd.DataFrame({
 df = df.sort_values(by=['col1'])
 
 #2.2 Sort by multiple columns: 重新排列-多欄位(排序順序先寫的重要性高)
+df = df.sort_values(by=['col1', 'col2'], ascending = [False, True])
+
+#2.3 Sort Descending
+df.sort_values(by='col1', ascending=False)
