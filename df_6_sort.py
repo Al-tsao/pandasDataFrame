@@ -25,3 +25,6 @@ df.sort_values(by='col1', ascending=False)
 
 #2.4 Sort Descending: 有NaN的放在前面
 df.sort_values(by='col1', ascending=False, na_position='first')
+
+#3 重新排列-回復原狀
+df.sort_index(ascending=True)
