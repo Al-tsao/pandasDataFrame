@@ -5,3 +5,6 @@ data = pd.DataFrame(np.arange(16).reshape(4,4), index = list('abcd'), columns = 
 
 #1 設定'A'column為index
 data.set_index(keys='A', inplace=True)
+
+#2 回復'A'成column
+data.reset_index(inplace=True)
