@@ -9,3 +9,7 @@ df = pd.DataFrame(RawData)
 #1 使用Boolean篩選
 #1.1 單一條件
 mask = df['Day']=='9/4'
+
+#1.2 多條件篩選
+mask = (df['Day'] == '9/11') & ( df['Revenue'] == 180) & (df['Cost'] == 18.0)
+df[mask]
