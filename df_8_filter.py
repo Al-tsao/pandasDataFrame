@@ -21,3 +21,7 @@ df.loc[i]
 #2 使用where: 讓不符合的值變成NaN
 mask = df['Day'] != '9/4' 
 df.where(mask)
+
+#3 isin()
+mask = df['Day'].isin(['9/4', '9/11'])
+df[mask]
