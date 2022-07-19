@@ -17,3 +17,7 @@ df[mask]
 #1.3 使用Boolean選到特定的index
 i = df[((df['Day'] == '9/4') & ( df['Revenue'] == 100) & (df['Cost'] == 18.0))].index.tolist()
 df.loc[i]
+
+#2 使用where: 讓不符合的值變成NaN
+mask = df['Day'] != '9/4' 
+df.where(mask)
