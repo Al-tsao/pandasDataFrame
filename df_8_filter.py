@@ -25,3 +25,8 @@ df.where(mask)
 #3 isin()
 mask = df['Day'].isin(['9/4', '9/11'])
 df[mask]
+
+#4 duplicated()
+mask = df['Cost'].duplicated()
+mask = ~mask
+df[mask]
