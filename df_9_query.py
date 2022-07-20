@@ -5,3 +5,10 @@
 #載入模組
 import numpy as np
 import pandas as pd
+
+#載入資料
+df = pd.DataFrame(np.random.randn(100, 3), columns = ['A', 'B', 'C'])
+df = df.stack().reset_index().iloc[:, ::-1]
+df.columns = ['Value', 'Column_Name', 'Index']
+#使用query
+df1 =df.query("Column_Name == 'A'") #篩選的A一定要用''，包起來不然會報錯
