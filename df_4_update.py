@@ -30,3 +30,6 @@ data['E'] = ['E.1', 'E.2', 'E.3', 'E.4']
 data['F'] = ['F.1', 'F.2', 'F.3', 'F.4']
 new_cols = ['W', 'F', 'Z', 'X', 'E', 'Y']
 data = data[new_cols]
+#使用insert來完成
+df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
+df.insert(1, "newcol", [99, 99])
