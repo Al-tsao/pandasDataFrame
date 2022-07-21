@@ -12,3 +12,6 @@ df = df.stack().reset_index().iloc[:, ::-1]
 df.columns = ['Value', 'Column_Name', 'Index']
 #使用query
 df1 =df.query("Column_Name == 'A'") #篩選的A一定要用''，包起來不然會報錯
+#使用filter
+mask = df['Column_Name'] == 'A'
+df2 = df[mask]
