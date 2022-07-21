@@ -18,3 +18,9 @@ print(df)
 
 data = pd.DataFrame(np.arange(16).reshape(4,4), index = list('abcd'), columns = list('ABCD'))
 print(data)
+
+#3 自訂index
+pd_dic_index = pd.DataFrame(dic, index=['A', 'B', 'C', 'D', 'E'])
+
+#4 將Series反轉成Dictionary
+dic_r = pd_dic.to_dict()

@@ -33,3 +33,6 @@ houses['date'].unique()
 
 #9 .dtypes 顯示每一個column的型態
 houses.dtypes
+
+#10 .index 看有甚麼index
+houses.index
